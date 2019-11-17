@@ -15,7 +15,13 @@ public class LineReaderStub implements LineReader {
     }
 
     void simulateUserInputs(String... inputs) {
+        reset();
         Arrays.stream(inputs).forEach(str->userInputs.add(str));
+    }
+
+    private void reset() {
+        readOffset = 0;
+        userInputs.clear();
     }
 
 
