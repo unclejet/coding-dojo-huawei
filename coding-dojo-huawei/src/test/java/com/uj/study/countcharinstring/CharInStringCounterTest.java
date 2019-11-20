@@ -67,7 +67,7 @@ public class CharInStringCounterTest {
     @Test
     void verifyOutput() {
         LinePrinterStub stub = new LinePrinterStub();
-        long count = reader.count("abcda", "a");
+        long count = CharCounter.count("abcda", "a");
         stub.printLine(String.valueOf(count));
         assertThat(stub.content, is("2"));
     }
