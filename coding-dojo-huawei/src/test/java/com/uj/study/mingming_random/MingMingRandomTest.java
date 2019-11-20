@@ -2,12 +2,9 @@ package com.uj.study.mingming_random;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Business
@@ -34,41 +31,20 @@ import static org.hamcrest.core.Is.is;
  * 输出描述:
  * 返回多行，处理后的结果
  */
-public class MingMingRandomTest {
+class MingMingRandomTest {
     @Test
-    void inputArraySize_ShouldBeNumber() {
-        LineReaderStub stub = new LineReaderStub();
-        stub.simulateUserInputs("abc", "@$#E", "11");
-        UserInputReader reader = new UserInputReader(stub);
-        assertThat(reader.readArraySize(), is(11));
+    void eliminateRedundancy() {
+        int[] array = {10, 10, 20, 30};
+        MingMingRandom mingRandom = new MingMingRandom();
+        int[] actual = mingRandom.handle(array);
+        assertThat(actual, is(new int[]{10, 20, 30}));
     }
 
     @Test
-    void createArrayFromUserInput() {
-        LineReaderStub stub = new LineReaderStub();
-        stub.simulateUserInputs("try", "10", "15", "abc", "30", "40");
-        UserInputReader reader = new UserInputReader(stub);
-        int[] array = reader.createArray(3);
-        assertThat(array, is(new int[]{10, 15, 30}));
-    }
-
-    private class LineReaderStub implements LineReader {
-        List<String> userInputs = new ArrayList<>();
-        private int readOffset = 0;
-
-        @Override
-        public String readLine() {
-            return userInputs.get(readOffset++);
-        }
-
-        void simulateUserInputs(String... inputs) {
-            reset();
-            Arrays.stream(inputs).forEach(str->userInputs.add(str));
-        }
-
-        private void reset() {
-            readOffset = 0;
-            userInputs.clear();
-        }
+    void sort() {
+        int[] array = {10, 20, 40, 32, 67, 40, 20, 89, 300, 400, 15};
+        MingMingRandom mingRandom = new MingMingRandom();
+        int[] actual = mingRandom.handle(array);
+        assertThat(actual, is(new int[]{10, 15, 20, 32, 40, 67, 89, 300, 400}));
     }
 }

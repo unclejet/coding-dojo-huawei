@@ -10,7 +10,7 @@ public final class UserInputReader {
         this.lineReader = lineReader;
     }
 
-    int readArraySize() {
+    public int readArraySize() {
         return readANumber();
     }
 
