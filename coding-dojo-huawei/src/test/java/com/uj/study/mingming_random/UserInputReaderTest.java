@@ -1,5 +1,6 @@
 package com.uj.study.mingming_random;
 
+import com.uj.study.common.input.LineReader;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

@@ -1,5 +1,7 @@
 package com.uj.study.countcharinstring;
 
+import com.uj.study.common.input.LineReader;
+
 public class UserInputReader {
     private LineReader lineReader;
     private static final String FIRST_REGEX = "[a-zA-Z0-9\\s]+";

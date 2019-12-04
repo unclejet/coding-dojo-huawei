@@ -1,5 +1,7 @@
 package com.uj.study.mingming_random;
 
+import com.uj.study.common.input.LineReader;
+
 import java.util.regex.Pattern;
 
 public final class UserInputReader {

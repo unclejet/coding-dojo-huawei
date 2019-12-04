@@ -1,5 +1,7 @@
 package com.uj.study.countcharinstring;
 
+import com.uj.study.common.input.LineReader;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

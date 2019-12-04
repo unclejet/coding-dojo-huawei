@@ -1,6 +1,7 @@
 package com.uj.study.mingming_random;
 
-import java.sql.SQLOutput;
+import com.uj.study.common.input.LineReader;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

@@ -1,5 +1,7 @@
 package com.uj.study.countcharinstring;
 
+import com.uj.study.common.input.LineReader;
+
 import java.util.Scanner;
 
 public class Main {
