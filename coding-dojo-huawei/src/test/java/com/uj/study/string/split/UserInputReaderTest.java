@@ -1,6 +1,7 @@
 package com.uj.study.string.split;
 
 import com.uj.study.common.input.LineReader;
+import com.uj.study.common.utils.RandomAlphabetGenerator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -36,6 +37,19 @@ public class UserInputReaderTest {
         String[] actual = reader.read2String();
         assertThat(actual[0], is(""));
         assertThat(actual[1], is(""));
+    }
+
+    @Test
+    void userInput_lessThan100() {
+        String moreString = RandomAlphabetGenerator.generateRandomAlphabetByUUIDNoDash(101);
+        String firstLine = RandomAlphabetGenerator.generateRandomAlphabetByUUIDNoDash(100);
+        String moreString1 = RandomAlphabetGenerator.generateRandomAlphabetByUUIDNoDash(201);
+        String secondLine = RandomAlphabetGenerator.generateRandomAlphabetByUUIDNoDash(99);
+        String moreString2 = RandomAlphabetGenerator.generateRandomAlphabetByUUIDNoDash(1);
+        stub.simulateUserInputs(moreString, firstLine, moreString1, secondLine, moreString2);
+        String[] actual = reader.read2String();
+        assertThat(actual[0], is(firstLine));
+        assertThat(actual[1], is(secondLine));
     }
 
     static class LineReaderStub implements LineReader {
