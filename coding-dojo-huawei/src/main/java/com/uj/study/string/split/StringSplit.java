@@ -19,7 +19,7 @@ public final class StringSplit {
             result.add(zero8);
         int len = s.length() / 8;
         for (int i = 0; i < len; i++) {
-            result.add(s.substring(i, i + 8));
+            result.add(s.substring(i * 8, (i * 8) + 8));
         }
         if (s.length() % 8 > 0)
             result.add(s.substring(len * 8) + zero8.substring(s.length() % 8));

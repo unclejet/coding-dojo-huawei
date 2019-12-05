@@ -73,6 +73,17 @@ public class StringSplitTest {
         assertThat(actual.get(1), is("12345678"));
         assertThat(actual.get(2), is("90000000"));
     }
+
+    @Test
+    void mainTest() {
+        String[] userReader = {"safdaw3ffsdafas333", "aw34w3arfase"};
+        List<String> actual = StringSplit.splitString(userReader);
+        assertThat(actual.get(0), is("safdaw3f"));
+        assertThat(actual.get(1), is("fsdafas3"));
+        assertThat(actual.get(2), is("33000000"));
+        assertThat(actual.get(3), is("aw34w3ar"));
+        assertThat(actual.get(4), is("fase0000"));
+    }
 }
 
 
