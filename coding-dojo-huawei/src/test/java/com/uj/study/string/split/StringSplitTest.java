@@ -48,6 +48,24 @@ public class StringSplitTest {
     }
 
     @Test
+    void splitString_oneEmptyInput() {
+        String[] userReader = {"a", ""};
+        List<String> actual = StringSplit.splitString(userReader);
+        assertThat(actual.size(), is(2));
+        assertThat(actual.get(0), is("a0000000"));
+        assertThat(actual.get(1), is("00000000"));
+    }
+
+    @Test
+    void splitString_oneBlankInput() {
+        String[] userReader = {"a", "  "};
+        List<String> actual = StringSplit.splitString(userReader);
+        assertThat(actual.size(), is(2));
+        assertThat(actual.get(0), is("a0000000"));
+        assertThat(actual.get(1), is("  000000"));
+    }
+
+    @Test
     void splitString() {
         String[] userReader = {"abc", "123456789"};
         List<String> actual = StringSplit.splitString(userReader);
