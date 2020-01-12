@@ -48,7 +48,7 @@ public class UserInputReaderTest {
         LineReaderStub stub = new LineReaderStub();
         stub.simulateUserInputs("-1", "abc", "0", "180");
         UserInputReader reader = new UserInputReader(stub);
-        assertThat(reader.readANumber(), is(180));
+        assertThat(reader.readANumber(), is(180L));
     }
 
 

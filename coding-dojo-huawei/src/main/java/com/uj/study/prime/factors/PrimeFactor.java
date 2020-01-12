@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeFactor {
-    public static List<Integer> getPrimeList(int n) {
-        List<Integer> result = new ArrayList<>();
+    public static List<Long> getPrimeList(long n) {
+        List<Long> result = new ArrayList<>();
         boolean isPrime;
-        for (int i = 2; i <= n; i++) {
+        for (long i = 2; i <= n; i++) {
             if (i % 2 == 0 && i != 2)
                 continue; //偶数和1排除
             isPrime = true;
-            for (int j = 2; j <= Math.sqrt(i); j++) {
+            for (long j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
                     isPrime = false;
                     break;
@@ -25,11 +25,11 @@ public class PrimeFactor {
         return result;
     }
 
-    public static List<Integer> getPrimeFactor(int n) {
-        List<Integer> result = new ArrayList<>();
-        List<Integer> primes = getPrimeList(n);
-        int number = n;
-        for (Integer prime : primes) {
+    public static List<Long> getPrimeFactor(long n) {
+        List<Long> result = new ArrayList<>();
+        List<Long> primes = getPrimeList(n);
+        long number = n;
+        for (Long prime : primes) {
             while (number % prime == 0) {
                 result.add(prime);
                 number = number / prime;

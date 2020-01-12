@@ -17,8 +17,8 @@ public class Main {
     public static void main(String[] args) {
         LineReader lineReader = ()->new Scanner(System.in).nextLine();
         UserInputReader userInputReader = new UserInputReader(lineReader);
-        int inputNumber = userInputReader.readANumber();
-        List<Integer> result = PrimeFactor.getPrimeFactor(inputNumber);
+        long inputNumber = userInputReader.readANumber();
+        List<Long> result = PrimeFactor.getPrimeFactor(inputNumber);
         result.forEach(System.out::println);
     }
 

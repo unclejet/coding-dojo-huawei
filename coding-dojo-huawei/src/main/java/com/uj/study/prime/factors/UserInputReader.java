@@ -11,12 +11,12 @@ public class UserInputReader {
         this.lineReader = lineReader;
     }
 
-    public int readANumber() {
-        int result = -1;
+    public long readANumber() {
+        long result = -1;
         do {
             String line = lineReader.readLine();
             try {
-                result = Integer.parseInt(line);
+                result = Long.parseLong(line);
             } catch (NumberFormatException e) {
                 System.out.println("please input a number");
             }
