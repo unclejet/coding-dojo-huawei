@@ -13,6 +13,9 @@ repositories {
 }
 
 dependencies {
+//    compile group: 'com.google.guava', name: 'guava', version: '22.0'
+    implementation 'org.apache.commons:commons-lang3:3.11'
+    implementation 'com.google.guava:guava:22.0'
     testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
     testImplementation('org.hamcrest:hamcrest-all:1.3')
 }

@@ -32,12 +32,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 public class UserInputReaderTest {
     private LineReaderStub lineReaderStub;
-    private UserInputReader userInputReader;
+    private NonRepeatExtractorUserInputReader userInputReader;
 
     @BeforeEach
     void setUp() {
         lineReaderStub = new LineReaderStub();
-        userInputReader = new UserInputReader(lineReaderStub);
+        userInputReader = new NonRepeatExtractorUserInputReader(lineReaderStub);
     }
 
     @Test
@@ -46,5 +46,11 @@ public class UserInputReaderTest {
         assertThat(userInputReader.readInteger(), is(1));
         assertThat(userInputReader.readInteger(), is(Integer.MAX_VALUE));
         assertThat(userInputReader.readInteger(), is(Integer.MIN_VALUE));
+    }
+
+    @Test
+    void lastInputNumberIsNot0() {
+        lineReaderStub.simulateUserInputs("10", "1");
+        assertThat(userInputReader.readInteger(), is(1));
     }
 }

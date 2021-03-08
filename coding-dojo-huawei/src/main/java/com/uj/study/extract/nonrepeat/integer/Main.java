@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         LineReader lineReader = () -> new Scanner(System.in).nextLine();
-        UserInputReader userInputReader = new UserInputReader(lineReader);
+        NonRepeatExtractorUserInputReader userInputReader = new NonRepeatExtractorUserInputReader(lineReader);
         int inputNumber = userInputReader.readInteger();
 
         int revertedNum = new NonRepeatExtractor().extract(inputNumber);

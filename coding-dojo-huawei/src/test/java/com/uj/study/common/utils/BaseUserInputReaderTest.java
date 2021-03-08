@@ -1,6 +1,5 @@
 package com.uj.study.common.utils;
 
-import com.uj.study.extract.nonrepeat.integer.UserInputReader;
 import org.junit.jupiter.api.BeforeEach;
 
 /**
