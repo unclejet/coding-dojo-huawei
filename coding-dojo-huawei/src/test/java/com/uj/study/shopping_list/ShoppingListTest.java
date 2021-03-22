@@ -1,5 +1,13 @@
 package com.uj.study.shopping_list;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 /**
  * @author ：UncleJet
  * @date ：Created in 2021/2/24 下午6:08
@@ -55,4 +63,36 @@ package com.uj.study.shopping_list;
  * 2200
  */
 public class ShoppingListTest {
+    @Test
+    void calculateMaxValue() {
+        Goods goods = new Goods(800, 2, 0);
+        goods.addAttachment(new Goods(400, 5, 1));
+        goods.addAttachment(new Goods(300, 5, 1));
+        List<Goods> goodsList = Arrays.asList(goods,
+                new Goods(400, 3, 0),
+                new Goods(500, 2, 0));
+        assertThat(ShoppingListCalculator.calculate(1000, goodsList), is(2200));
+    }
+
+    @Test
+    void calculateMaxValue_totalMoney1000() {
+        Goods goods = new Goods(800, 2, 0);
+        goods.addAttachment(new Goods(400, 5, 1));
+        goods.addAttachment(new Goods(300, 5, 1));
+        List<Goods> goodsList = Arrays.asList(goods,
+                new Goods(500, 3, 0),
+                new Goods(500, 2, 0));
+        assertThat(ShoppingListCalculator.calculate(1000, goodsList), is(1500));
+    }
+
+    @Test
+    void calculateMaxValue_totalValue200000() {
+        Goods goods = new Goods(80000, 2, 0);
+        goods.addAttachment(new Goods(40000, 5, 1));
+        goods.addAttachment(new Goods(30000, 5, 1));
+        List<Goods> goodsList = Arrays.asList(goods,
+                new Goods(40000, 3, 0),
+                new Goods(50000, 2, 0));
+        assertThat(ShoppingListCalculator.calculate(100000, goodsList), is(100000));
+    }
 }

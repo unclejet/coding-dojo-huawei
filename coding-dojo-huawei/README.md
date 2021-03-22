@@ -66,3 +66,4 @@ JDK 11 gradle 6.1 junit 5.5.2
 
 ## 购物单(shopping list)
 - 正则表达式：用空格分隔2到3个数字
+- list倒序排序

@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  */
 public class ShoppingListUserInputReader extends UserInputReader {
     public static final Pattern FIRST_LINE_PATTERN = Pattern.compile("(\\d+)\\s+(\\d+)");
-    public static final Pattern SECOND_LINE_PATTERN = Pattern.compile("(\\d+)\\s+(\\d+)\\s+(\\d+)");
+    public static final Pattern SECOND_LINE_PATTERN = Pattern.compile("^(\\d+)\\s+(\\d+)\\s+(\\d+)");
     public static final int TOTAL_MONEY_NUM = 32000;
     public static final int TOTAL_GOODS_NUM = 60;
 
@@ -60,7 +60,7 @@ public class ShoppingListUserInputReader extends UserInputReader {
     }
 
     public List<Goods> readGoods() {
-        List<Goods> goods = new ArrayList<>();
+        List<Goods> goodsList = new ArrayList<>();
         count = 0;
         Matcher matcher = SECOND_LINE_PATTERN.matcher(lineReader.readLine());
         while (needRead()) {
@@ -68,27 +68,28 @@ public class ShoppingListUserInputReader extends UserInputReader {
                 System.out.println("Please input v(v<10000) p(1~5) q(0 or !0) like this: 800 2 0");
                 matcher = SECOND_LINE_PATTERN.matcher(lineReader.readLine());
             }
-            goods.add(new Goods(Integer.parseInt(matcher.group(1)),
-                    Integer.parseInt(matcher.group(2)),
-                    Integer.parseInt(matcher.group(3))));
+            storeGoods(goodsList, matcher);
         }
-        return goods;
+        return goodsList;
+    }
+
+    private void storeGoods(List<Goods> goodsList, Matcher matcher) {
+        Goods g = new Goods(Integer.parseInt(matcher.group(1)),
+                Integer.parseInt(matcher.group(2)),
+                Integer.parseInt(matcher.group(3)));
+        if (g.getType() == 0)
+            goodsList.add(g);
+        else {
+            Goods majorGoods = goodsList.get(goodsList.size() - 1);
+            majorGoods.addAttachment(g);
+        }
     }
 
     private boolean isValidLine(Matcher matcher) {
-//        boolean b = matcher.find();
-//        int i1 = Integer.parseInt(matcher.group(1));
-//        int i2 = Integer.parseInt(matcher.group(2));
-//        int i3 = Integer.parseInt(matcher.group(2));
-//        boolean b1 = matcher.find() &&
-//                Integer.parseInt(matcher.group(1)) < 10000;
-//        boolean b2 = Integer.parseInt(matcher.group(2)) >= 1;
-//        boolean b3 = Integer.parseInt(matcher.group(2)) <= 5;
-        boolean b4 = matcher.find() &&
+        return matcher.find() &&
                 Integer.parseInt(matcher.group(1)) < 10000 &&
                 Integer.parseInt(matcher.group(2)) >= 1 &&
                 Integer.parseInt(matcher.group(2)) <= 5;
-        return b4;
     }
 
     private boolean needRead() {
