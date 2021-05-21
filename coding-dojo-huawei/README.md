@@ -71,6 +71,9 @@ JDK 11 gradle 6.1 junit 5.5.2
 ## 坐标计算(coordinate)
 
 ## IP和子网掩码识别(ip identity)
+- Predicate and or compose
+- groupingby
+- factory pattern
 
 ## 简单错误记录功能小模块(find_code_error)
 - 解决groupingBy之后的map无序问题(主动声明linkedhashMap)
