@@ -35,9 +35,4 @@ public class IpNetmaskUserInputReader extends BaseUserInputReader {
         }
         return result;
     }
-
-    private boolean exit(String line) {
-        return "exit".equals(line);
-    }
-
 }

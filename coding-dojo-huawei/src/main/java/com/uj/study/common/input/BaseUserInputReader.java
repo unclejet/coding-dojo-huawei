@@ -8,9 +8,14 @@ package com.uj.study.common.input;
  * @version:
  */
 public class BaseUserInputReader {
+    public static final String EXIT = "exit";
     protected LineReader lineReader;
 
     public BaseUserInputReader(LineReader lineReader) {
         this.lineReader = lineReader;
+    }
+
+    protected boolean exit(String line) {
+        return EXIT.equals(line);
     }
 }

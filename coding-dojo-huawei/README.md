@@ -78,3 +78,6 @@ JDK 11 gradle 6.1 junit 5.5.2
 ## 简单错误记录功能小模块(find_code_error)
 - 解决groupingBy之后的map无序问题(主动声明linkedhashMap)
 - 显示map最新的8条记录(用steam.skip)
+
+## 密码验证
+- 不能有相同长度大于2的子串重复
