@@ -81,3 +81,6 @@ JDK 11 gradle 6.1 junit 5.5.2
 
 ## 密码验证
 - 不能有相同长度大于2的子串重复
+
+## 简单密码破解
+string.chars() stream -> intstream -> string
