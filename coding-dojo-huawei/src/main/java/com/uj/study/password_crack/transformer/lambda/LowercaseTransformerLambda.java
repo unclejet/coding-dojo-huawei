@@ -1,16 +1,19 @@
-package com.uj.study.password_crack;
+package com.uj.study.password_crack.transformer.lambda;
+
+import com.uj.study.password_crack.transformer.old.PwdTransformerOld;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
  * @author ：UncleJet
- * @date ：Created in 2021/6/23 上午10:08
+ * @date ：Created in 2021/6/29 下午12:26
  * @description：
  */
-public class LowercaseTransformer extends PwdTransformer {
+public class LowercaseTransformerLambda implements UnaryOperator<Character> {
     private static final Pattern LOWER_PATTERN = Pattern.compile("\\p{Lower}");
 
     private static Map<String, Character> mapper;
@@ -27,18 +30,17 @@ public class LowercaseTransformer extends PwdTransformer {
         mapper.put("wxyz", '9');
     }
 
-    public LowercaseTransformer(PwdTransformer nextTransformer) {
-        super(nextTransformer);
+    @Override
+    public Character apply(Character character) {
+        return canHandle(character) ? handle(character) : character;
     }
 
-    @Override
-    public char handle(char c) {
+    private char handle(char c) {
         String key = mapper.keySet().stream().filter(k->k.contains(String.valueOf(c))).collect(Collectors.joining());
         return mapper.get(key);
     }
 
-    @Override
-    boolean canHandle(char c) {
+    private boolean canHandle(char c) {
         return LOWER_PATTERN.matcher(String.valueOf(c)).matches();
     }
 }

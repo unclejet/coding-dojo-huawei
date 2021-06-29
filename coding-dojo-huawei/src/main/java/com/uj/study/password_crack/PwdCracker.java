@@ -1,8 +1,14 @@
 package com.uj.study.password_crack;
 
-import java.util.stream.Collectors;
+import com.uj.study.password_crack.transformer.lambda.LowercaseTransformerLambda;
+import com.uj.study.password_crack.transformer.lambda.NumberTransFormerLambda;
+import com.uj.study.password_crack.transformer.lambda.SymbolTransFormerLambda;
+import com.uj.study.password_crack.transformer.lambda.UppercaseTransFormerLambda;
+import com.uj.study.password_crack.transformer.old.*;
+
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /**
  * @author ：UncleJet
@@ -10,12 +16,12 @@ import java.util.stream.Stream;
  * @description：
  */
 public class PwdCracker {
-    private static PwdTransformer transformers;
+    private static PwdTransformerOld transformers;
     static {
-        transformers = new UppercaseTransFormer(
-                new LowercaseTransformer(
-                        new NumberTransFormer(
-                                new SymbolTransFormer(null)
+        transformers = new UppercaseTransFormerOld(
+                new LowercaseTransformerOld(
+                        new NumberTransFormerOld(
+                                new SymbolTransFormerOld(null)
                         )
                 )
         );
@@ -24,5 +30,19 @@ public class PwdCracker {
     public static String crack(String pwd) {
         IntStream is = pwd.chars().map(c-> transformers.transform((char) c));
         return  is.collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
+    }
+
+    public static String crackLambda(String pwd) {
+        IntStream is = pwd.chars().map(c-> transform((char) c));
+        return  is.collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
+    }
+
+    public static char transform(char c) {
+        UnaryOperator<Character> number = new NumberTransFormerLambda();
+        UnaryOperator<Character> symbol = new SymbolTransFormerLambda();
+        UnaryOperator<Character> uppercase = new UppercaseTransFormerLambda();
+        UnaryOperator<Character> lowercase = new LowercaseTransformerLambda();
+        Function<Character, Character> chain = number.andThen(symbol).andThen(lowercase).andThen(uppercase);
+        return chain.apply(c);
     }
 }

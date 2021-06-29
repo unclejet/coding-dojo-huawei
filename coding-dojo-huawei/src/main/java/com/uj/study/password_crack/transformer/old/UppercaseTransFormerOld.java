@@ -1,4 +1,4 @@
-package com.uj.study.password_crack;
+package com.uj.study.password_crack.transformer.old;
 
 import java.util.regex.Pattern;
 
@@ -7,10 +7,10 @@ import java.util.regex.Pattern;
  * @date ：Created in 2021/6/22 下午12:23
  * @description：
  */
-public class UppercaseTransFormer extends PwdTransformer {
+public class UppercaseTransFormerOld extends PwdTransformerOld {
     private static final Pattern UPPER_PATTERN = Pattern.compile("\\p{Upper}");
 
-    public UppercaseTransFormer(PwdTransformer nextTransformer) {
+    public UppercaseTransFormerOld(PwdTransformerOld nextTransformer) {
         super(nextTransformer);
     }
 

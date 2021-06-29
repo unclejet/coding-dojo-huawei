@@ -1,4 +1,4 @@
-package com.uj.study.password_crack;
+package com.uj.study.password_crack.transformer.old;
 
 import java.util.regex.Pattern;
 
@@ -7,10 +7,10 @@ import java.util.regex.Pattern;
  * @date ：Created in 2021/6/22 下午12:21
  * @description：
  */
-public class SymbolTransFormer extends PwdTransformer {
+public class SymbolTransFormerOld extends PwdTransformerOld {
     private static final Pattern ALNUM_PATTERN = Pattern.compile("\\p{Alnum}");
 
-    public SymbolTransFormer(PwdTransformer nextTransformer) {
+    public SymbolTransFormerOld(PwdTransformerOld nextTransformer) {
         super(nextTransformer);
     }
 

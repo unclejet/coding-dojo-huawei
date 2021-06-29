@@ -1,12 +1,12 @@
-package com.uj.study.password_crack;
+package com.uj.study.password_crack.transformer.old;
 
 /**
  * @author ：UncleJet
  * @date ：Created in 2021/6/17 下午12:15
  * @description：
  */
-public class NumberTransFormer extends PwdTransformer {
-    public NumberTransFormer(PwdTransformer nextTransformer) {
+public class NumberTransFormerOld extends PwdTransformerOld {
+    public NumberTransFormerOld(PwdTransformerOld nextTransformer) {
         super(nextTransformer);
     }
 

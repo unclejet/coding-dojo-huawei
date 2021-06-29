@@ -1,14 +1,14 @@
-package com.uj.study.password_crack;
+package com.uj.study.password_crack.transformer.old;
 
 /**
  * @author ：UncleJet
  * @date ：Created in 2021/6/17 下午12:15
  * @description：
  */
-public abstract class PwdTransformer {
-    private PwdTransformer nextTransformer;
+public abstract class PwdTransformerOld {
+    private PwdTransformerOld nextTransformer;
 
-    public PwdTransformer(PwdTransformer nextTransformer) {
+    public PwdTransformerOld(PwdTransformerOld nextTransformer) {
         this.nextTransformer = nextTransformer;
     }
 
@@ -17,7 +17,7 @@ public abstract class PwdTransformer {
                 nextTransformer.transform(c) : handle(c);
     }
 
-    abstract char handle(char c);
+    public abstract char handle(char c);
 
     abstract boolean canHandle(char c);
 }

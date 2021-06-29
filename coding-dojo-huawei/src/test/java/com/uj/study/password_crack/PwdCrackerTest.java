@@ -13,6 +13,6 @@ import static org.hamcrest.core.Is.is;
 public class PwdCrackerTest {
     @Test
     void crack() {
-        assertThat(PwdCracker.crack("YUANzhi1987"), is("zvbo9441987"));
+        assertThat(PwdCracker.crackLambda("YUANzhi1987"), is("zvbo9441987"));
     }
 }
