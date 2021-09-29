@@ -85,5 +85,6 @@ JDK 11 gradle 6.1 junit 5.5.2
 ## 简单密码破解
 string.chars() stream -> intstream -> string
 
-## 汽水瓶
-
+## 删除字符串中出现次数最少的字符 
+- 字符串变为字符串stream->Arrays.stream(input.split(""))
+- map 按照value值 聚合key list
