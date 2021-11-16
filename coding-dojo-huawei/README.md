@@ -88,3 +88,6 @@ string.chars() stream -> intstream -> string
 ## 删除字符串中出现次数最少的字符 
 - 字符串变为字符串stream->Arrays.stream(input.split(""))
 - map 按照value值 聚合key list
+
+## 合唱队
+
