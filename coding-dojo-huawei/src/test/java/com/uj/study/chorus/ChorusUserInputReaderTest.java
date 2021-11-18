@@ -40,8 +40,23 @@ public class ChorusUserInputReaderTest extends BaseUserInputReaderTest {
     }
 
     @Test
-    void inputOneLine() {
-        lineReaderStub.simulateUserInputs("8");
-        assertThat(reader.readHeights(), is(8));
+    void inputTwoLine() {
+        lineReaderStub.simulateUserInputs("8", "186 186 150 200 160 130 197 200");
+        int[] heights = reader.readHeights();
+        assertThat(heights.length, is(8));
+        assertThat(heights[0], is(186));
+        assertThat(heights[7], is(200));
+    }
+
+    @Test
+    void heightsQueueInputFormatMatch() {
+        String inputs = "186 186 150 200 160 130 197 200";
+        assertThat(reader.isValidFormat(inputs, 8), is(true));
+        inputs = "186";
+        assertThat(reader.isValidFormat(inputs, 1), is(true));
+        inputs = "186 a";
+        assertThat(reader.isValidFormat(inputs, 2), is(false));
+        inputs = "186 ";
+        assertThat(reader.isValidFormat(inputs, 2), is(false));
     }
 }
