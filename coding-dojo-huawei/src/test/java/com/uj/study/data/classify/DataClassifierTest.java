@@ -34,10 +34,10 @@ public class DataClassifierTest {
     void classify() {
         String[] sr = {"6", "3", "6", "3", "0"};
         String[] si = {"123", "456", "786"};
-        assertThat(DataClassifier.classify(sr, si), is("10,3,1,0,123,6,2,1,456,2,786"));
+        assertThat(DataClassifier.classify(sr, si), is("10 3 1 0 123 6 2 1 456 2 786"));
 
         si = new String[]{"123", "456", "786", "453", "46", "7", "5", "3", "665", "453456", "745", "456", "786", "453", "123"};
-        assertThat(DataClassifier.classify(sr, si), is("30,3,6,0,123,3,453,7,3,9,453456,13,453,14,123,6,7,1,456,2,786,4,46,8,665,9,453456,11,456,12,786"));
+        assertThat(DataClassifier.classify(sr, si), is("30 3 6 0 123 3 453 7 3 9 453456 13 453 14 123 6 7 1 456 2 786 4 46 8 665 9 453456 11 456 12 786"));
 
 
     }
