@@ -90,4 +90,8 @@ string.chars() stream -> intstream -> string
 - map 按照value值 聚合key list
 
 ## 合唱队
+- int array stream get index
 
+## 数据分类处理
+- 正则表达式：数字 空格
+- 获取子数组
