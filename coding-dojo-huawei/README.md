@@ -95,3 +95,7 @@ string.chars() stream -> intstream -> string
 ## 数据分类处理
 - 正则表达式：数字 空格
 - 获取子数组
+
+## 字符串排序 
+- list to string
+- string to list
