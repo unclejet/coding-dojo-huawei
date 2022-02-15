@@ -17,7 +17,7 @@ public class LineSorter {
     }
 
     private static boolean outOfOrder(char[] result, int index) {
-        return result[index] > result[index + 1];
+        return Character.toLowerCase(result[index]) > Character.toLowerCase(result[index + 1]);
     }
 
     private static void swap(char[] result, int index) {
