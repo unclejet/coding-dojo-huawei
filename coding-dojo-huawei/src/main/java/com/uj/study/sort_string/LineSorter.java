@@ -9,20 +9,41 @@ public class LineSorter {
     public static String sort(String input) {
         char[] result = input.toCharArray();
         for (int length = result.length; length > 0; length--)
-            for (int index = 0; index + 1 < length; index++)
-                if (outOfOrder(result, index))
-                    swap(result, index);
-
+            for (int index = 0; index + 1 < length; index++) {
+                int nextIdx = nextLetter(result, index);
+                if (outOfOrder(result, index, nextIdx))
+                    swap(result, index, nextIdx);
+            }
         return String.valueOf(result);
     }
 
-    private static boolean outOfOrder(char[] result, int index) {
-        return Character.toLowerCase(result[index]) > Character.toLowerCase(result[index + 1]);
+    static int nextLetter(char[] result, int startIdx) {
+        for (int nextIdx = startIdx + 1; nextIdx < result.length; nextIdx++) {
+            if (isLetter(result[nextIdx]))
+                return nextIdx;
+        }
+        return -1;
     }
 
-    private static void swap(char[] result, int index) {
+    private static boolean outOfOrder(char[] result, int index, int nextIdx) {
+        char ch = result[index];
+        if (!isLetter(ch)) {
+            return false;
+        }
+        return  hasNextLetter(nextIdx) ? Character.toLowerCase(ch) > Character.toLowerCase(result[nextIdx]) : false;
+    }
+
+    private static boolean hasNextLetter(int nextIdx) {
+        return nextIdx > 0;
+    }
+
+    private static boolean isLetter(char ch) {
+        return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
+    }
+
+    private static void swap(char[] result, int index, int nextIdx) {
         char temp = result[index];
-        result[index] = result[index + 1];
-        result[index + 1] = temp;
+        result[index] = result[nextIdx];
+        result[nextIdx] = temp;
     }
 }
