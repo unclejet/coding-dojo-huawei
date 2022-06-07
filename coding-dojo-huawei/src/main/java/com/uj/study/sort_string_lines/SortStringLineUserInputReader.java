@@ -2,6 +2,7 @@ package com.uj.study.sort_string_lines;
 
 import com.uj.study.common.input.LineReader;
 import com.uj.study.common.input.UserInputReader;
+import com.uj.study.common.input.ValidLineReader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.regex.Pattern;
  * @date ：Created in 2021/2/5 下午1:45
  * @description：
  */
-public class SortStringLineUserInputReader extends UserInputReader {
+public class SortStringLineUserInputReader extends ValidLineReader {
     private static final Pattern ALPHA_PATTERN = Pattern.compile("^\\p{Alpha}*$");
 
     private int count;
@@ -31,19 +32,14 @@ public class SortStringLineUserInputReader extends UserInputReader {
     }
 
     private String getLine() {
-        String line = lineReader.readLine();
-        while (!isValidString(line)) {
-            System.out.println("Please input alpha string and length <= 100 : ");
-            line = lineReader.readLine();
-        }
-        return line;
+        return super.readValidLine("Please input alpha string and length <= 100 : ");
     }
 
     private boolean hasNextLine(int number) {
         return count++ < number;
     }
 
-    private boolean isValidString(String line) {
+    protected boolean isValidString(String line) {
         return isAlpha(line);
     }
 
