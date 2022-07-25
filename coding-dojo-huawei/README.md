@@ -99,3 +99,6 @@ string.chars() stream -> intstream -> string
 ## 字符串排序 
 - list to string
 - string to list
+
+#字符串加解密
+char to string

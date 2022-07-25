@@ -16,5 +16,4 @@ public class Main {
         PrimeFactorUserInputNumberReader reader = new PrimeFactorUserInputNumberReader(lineReader);
         System.out.println(PrimePartner.bestPartner(reader.readNumbers(4)));
     }
-
 }
