@@ -101,4 +101,14 @@ string.chars() stream -> intstream -> string
 - string to list
 
 #字符串加解密
-char to string
+- char to string
+
+#字符串合并处理 
+- ascii int to char -> (char) c
+- hex to decimal
+- decimal to binary
+- binary to decimal
+- decimal to hex
+
+
+
