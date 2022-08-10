@@ -110,5 +110,7 @@ string.chars() stream -> intstream -> string
 - binary to decimal
 - decimal to hex
 
-
+#单词倒排
+- list 倒序
+- list 按 空格 to string
 
