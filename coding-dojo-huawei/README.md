@@ -114,5 +114,11 @@ string.chars() stream -> intstream -> string
 - list 倒序
 - list 按 空格 to string
 
+#整数与IP地址间的转换
+- stream string join 
+
+#整数与IP地址间的转换
+- 二进制，十进制转换
+- IP format
 
 

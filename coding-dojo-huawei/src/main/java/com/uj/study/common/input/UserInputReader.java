@@ -21,6 +21,13 @@ public abstract class UserInputReader {
         }
     }
 
-
+    protected boolean isLong(String inputStr) {
+        try {
+            Long.parseLong(inputStr);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
 }
