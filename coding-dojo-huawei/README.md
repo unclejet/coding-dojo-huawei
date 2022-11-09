@@ -115,12 +115,15 @@ string.chars() stream -> intstream -> string
 - list 按 空格 to string
 
 #整数与IP地址间的转换
-- stream string join 
-
-#整数与IP地址间的转换
+- stream string join
 - 二进制，十进制转换
 - IP format
 
 #图片整理
 - ASCII排序
+
+#字符串加密
+- 字符串字母去重
+- map two list one as key and another as value
+
 
