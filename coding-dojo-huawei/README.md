@@ -126,4 +126,7 @@ string.chars() stream -> intstream -> string
 - 字符串字母去重
 - map two list one as key and another as value
 
+# 求小球落地5次后所经历的路程和第5次反弹的高度
+- 按索引range stream遍历数组
+
 
