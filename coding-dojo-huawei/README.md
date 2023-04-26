@@ -132,4 +132,7 @@ string.chars() stream -> intstream -> string
 # 学英语 
 - 字符串用空格拼接
 
+# 迷宫问题 
+- string array to int array
+
 
