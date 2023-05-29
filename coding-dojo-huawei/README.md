@@ -135,4 +135,9 @@ string.chars() stream -> intstream -> string
 # 迷宫问题 
 - string array to int array
 
+# suduku
+- 二维数组转一维数组
+- 二维数组打印
+- set去重
+
 
