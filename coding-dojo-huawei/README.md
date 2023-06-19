@@ -140,4 +140,8 @@ string.chars() stream -> intstream -> string
 - 二维数组打印
 - set去重
 
+# 名字的漂亮度
+- intstream groupingby integer
+- map value sort and sum value with count--
+
 
