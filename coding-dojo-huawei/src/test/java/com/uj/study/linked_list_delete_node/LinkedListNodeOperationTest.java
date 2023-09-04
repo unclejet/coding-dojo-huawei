@@ -91,7 +91,7 @@ import static org.hamcrest.core.IsNull.*;
  *
  * 如题
  */
-public class LinkedListNodeDeleterTest {
+public class LinkedListNodeOperationTest {
     @Test
     void generate_2_nodes() {
         List<Integer> list = Arrays.asList(2, 2, 1, 2, 2);

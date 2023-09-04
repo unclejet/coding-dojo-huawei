@@ -5,13 +5,11 @@ import com.uj.study.common.utils.RandomAlphabetGenerator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.stream.IntStream;
-
 import static com.uj.study.string_encryption_decryption.StringEncryptionDecryption.handleDecrypt;
 import static com.uj.study.string_encryption_decryption.StringEncryptionDecryption.handleEncrypt;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 import static org.hamcrest.collection.IsArrayContainingInOrder.arrayContaining;
+import static org.hamcrest.core.Is.is;
 
 /**
  * @author ：UncleJet
