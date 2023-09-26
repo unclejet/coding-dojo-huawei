@@ -30,4 +30,12 @@ public abstract class UserInputReader {
         }
     }
 
+    protected int getInteger(String inputStr) {
+        try {
+            return Integer.parseInt(inputStr);
+        } catch (NumberFormatException e) {
+            return -1;
+        }
+    }
+
 }
