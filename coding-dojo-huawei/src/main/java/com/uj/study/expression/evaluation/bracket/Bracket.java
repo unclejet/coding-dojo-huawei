@@ -11,10 +11,6 @@ import lombok.Data;
 public abstract class Bracket {
     public static final String PARENTHESES_LEFT = "(";
     public static final String PARENTHESES_RIGHT = ")";
-    public static final String BRACKET_LEFT = "[";
-    public static final String BRACKET_RIGHT = "]";
-    public static final String BRACE_LEFT = "{";
-    public static final String BRACE_RIGHT = "}";
 
     private int lIdx;
     private int rIdx;

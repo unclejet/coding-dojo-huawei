@@ -1,6 +1,8 @@
 package com.uj.study.expression.evaluation.bracket;
 
-import static com.uj.study.four_operations.bracket.Bracket.*;
+
+import static com.uj.study.expression.evaluation.bracket.Bracket.PARENTHESES_LEFT;
+import static com.uj.study.expression.evaluation.bracket.Bracket.PARENTHESES_RIGHT;
 
 /**
  * @author ：UncleJet
@@ -16,14 +18,7 @@ public class BracketFactory {
         if (parL >= 0) {
             return new Parentheses(parL, op.indexOf(PARENTHESES_RIGHT, parL));
         }
-        int brakL = op.lastIndexOf(BRACKET_LEFT);
-        if (brakL >= 0) {
-            return new Brackets(brakL, op.indexOf(BRACKET_RIGHT, brakL));
-        }
-        int braceL = op.lastIndexOf(BRACE_LEFT);
-        if (braceL >= 0) {
-            return new Braces(braceL, op.indexOf(BRACE_RIGHT, braceL));
-        }
+
         return null;
     }
 }
