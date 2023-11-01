@@ -144,6 +144,8 @@ string.chars() stream -> intstream -> string
 - intstream groupingby integer
 - map value sort and sum value with count--
 
-
+# 查找组成一个偶数最接近的两个素数 
+- min
+- comparing
 
 
