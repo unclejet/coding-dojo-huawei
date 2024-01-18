@@ -56,4 +56,12 @@ public final class RandomAlphabetGenerator {
         boolean useNumbers = false;
         return RandomStringUtils.random(length, useLetters, useNumbers);
     }
+
+    public static String generateSpecialCharacterManyTimes(String character, int times) {
+        StringBuilder sb = new StringBuilder(times);
+        for (int i = 0; i < times; i++) {
+            sb.append(character);
+        }
+        return sb.toString();
+    }
 }
