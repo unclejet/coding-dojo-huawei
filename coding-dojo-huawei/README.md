@@ -148,4 +148,13 @@ string.chars() stream -> intstream -> string
 - min
 - comparing
 
+# 矩阵乘法
+- 数组拷贝
+
+#矩阵乘法计算量估算
+- test assert throw exception
+- string array to list
+- 统计字数串中某个字符的个数
+- 根据ascii当前字符获取下一个字符
+
 
