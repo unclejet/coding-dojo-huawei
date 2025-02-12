@@ -158,3 +158,4 @@ build
 .gradle
 out
 gradle
+/lombok.config
