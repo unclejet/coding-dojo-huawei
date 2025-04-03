@@ -81,13 +81,6 @@ public class PokerSizeReader extends ValidLineReader {
             return false;
         }
 
-        // 检查特殊情况：不允许 "joker-JOKER" 这样的输入
-        String firstHand = parts[0].trim();
-        String secondHand = parts[1].trim();
-        if (firstHand.equals(SMALL_JOKER) && secondHand.equals(JOKER)) {
-            return false;
-        }
-
         return true;
     }
 

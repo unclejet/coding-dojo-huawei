@@ -126,7 +126,6 @@ public class PokerSizeReaderTest extends BaseUserInputReaderTest {
         lineReaderStub.simulateUserInputs(
                 "joker joker-3 4",          // 不是对王
                 "JOKER JOKER-5 5",          // 不是对王
-                "joker-JOKER",              // 格式错误
                 "joKer JOKER-7 7",          // 大小写错误
                 "joker JOKER-A A"           // 有效输入
         );
@@ -145,5 +144,7 @@ public class PokerSizeReaderTest extends BaseUserInputReaderTest {
         assertEquals("3 4 5 6 7-2 2 2 2", reader.readCard());
         lineReaderStub.simulateUserInputs("joker JOKER-A A A A");
         assertEquals("joker JOKER-A A A A", reader.readCard());
+        lineReaderStub.simulateUserInputs("joker-JOKER");
+        assertEquals("joker-JOKER", reader.readCard());
     }
 }
